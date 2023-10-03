@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      Calculadora de Taxas de Competição
-    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Taxas de Competição</title>
     <style>
       body {
-        margin-top:20;
+        margin-top: 20;
         text-align: center;
         font-size: 20px;
         color: rgb(0, 0, 0);
@@ -28,15 +26,15 @@
         max-height: 100px;
       }
 
-      input[type=text] {
-        min-height:50px;
+      input[type="text"] {
+        min-height: 50px;
         min-width: 10px;
         font-size: 20px;
       }
 
       table {
         border-collapse: collapse;
-        border: 2px solid rgb(200,200,200);
+        border: 2px solid rgb(200, 200, 200);
         letter-spacing: 1px;
         font-size: 0.8rem;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -47,13 +45,14 @@
         margin-right: auto;
       }
 
-      td, th {
-        border: 1px solid rgb(190,190,190);
+      td,
+      th {
+        border: 1px solid rgb(190, 190, 190);
         padding: 10px 20px;
       }
 
       th {
-        background-color: rgb(235,235,235);
+        background-color: rgb(235, 235, 235);
       }
 
       td {
@@ -61,64 +60,83 @@
       }
 
       tr:nth-child(even) td {
-        background-color: rgb(250,250,250);
+        background-color: rgb(250, 250, 250);
       }
 
       tr:nth-child(odd) td {
-        background-color: rgb(245,245,245);
+        background-color: rgb(245, 245, 245);
       }
 
       caption {
         padding: 10px;
       }
-      
     </style>
   </head>
   <body>
-    <img src="https://i.imgur.com/WrFKnqk.png">
-    <h1 style="font-size:4vw">Calculadora de Taxas de Competição</h1>
+    <img src="https://i.imgur.com/WrFKnqk.png" />
+    <h1 style="font-size: 4vw">Calculadora de Taxas de Competição</h1>
 
     <div class="form-wrapper">
-      <input type="text" id="quantidadeCompetidores" name="quantidadeCompetidores" placeholder="Número de competidores">
-      <input type="text" id="valorInscricao" name="" placeholder="Valor da inscrição">
+      <input
+        type="text"
+        id="quantidadeCompetidores"
+        name="quantidadeCompetidores"
+        placeholder="Número de competidores"
+      />
+      <input
+        type="text"
+        id="valorInscricao"
+        name=""
+        placeholder="Valor da inscrição"
+      />
       <div id="caixaDados"></div>
     </div>
-    <br>
+    <br />
     <label>
-      <input type="checkbox" checked="true" onclick="htmlAluguel(this)" id="aluguel">
+      <input
+        type="checkbox"
+        checked="true"
+        onclick="htmlAluguel(this)"
+        id="aluguel"
+      />
       Taxa de aluguel de equipamentos
     </label>
 
-    <div class="caixa" name="associacoesEquipamentos" id="associacoesEquipamentos">
-        <label>
-          <input type="radio" name="choice-radio" checked="true" id="abracm">
-          ABRACM
-        </label>
-        <label>
-          <input type="radio" name="choice-radio" id="abcm">
-          ABCM
-        </label>
-        <br>
-        <label for="diasCompeticoes">Número de dias de competição:
-          <select name="diasCompeticoes" id="diasCompeticoes">
-            <option value="1">1</option>
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </label>
+    <div
+      class="caixa"
+      name="associacoesEquipamentos"
+      id="associacoesEquipamentos"
+    >
+      <label>
+        <input type="radio" name="choice-radio" checked="true" id="abracm" />
+        ABRACM
+      </label>
+      <label>
+        <input type="radio" name="choice-radio" id="abcm" />
+        ABCM
+      </label>
+      <br />
+      <label for="diasCompeticoes"
+        >Número de dias de competição:
+        <select name="diasCompeticoes" id="diasCompeticoes">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
     </div>
-    <br>
+    <br />
     <label>
-      <input type="checkbox" id="stripe">
-      <label for="stripe">Stripe para pagamento das inscrições</label> 
+      <input type="checkbox" id="stripe" />
+      <label for="stripe">Stripe para pagamento das inscrições</label>
     </label>
     <p></p>
 
     <button onClick="calcularTaxa()">Calcular taxa</button>
 
-    <p id="valorTaxa"></p>  
-    
-    <script src="script.js"></script>
+    <p id="valorTaxa"></p>
 
+    <script src="script.js"></script>
   </body>
+</html>
