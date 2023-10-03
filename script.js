@@ -1,11 +1,7 @@
-function calcularWCA(valorInscricao) {
-  if (valorInscricao * 0.15 > 2.32) {
-    var valorWCA = valorInscricao * 0.15;
-  } else {
-    var valorWCA = 2.32;
-  }
-  return valorWCA;
-}
+const WCA_VALUE = 2.32;
+
+const calcularWCA = (valorInscricao) =>
+  Math.max(valorInscricao * 0.15, WCA_VALUE);
 
 function calcularAluguel() {
   if (document.getElementById("abracm").checked) {
@@ -39,13 +35,10 @@ function arredondaDinheiro(dinheiro) {
 }
 
 function verificaInputs() {
-  if (!parseInt(document.getElementById("quantidadeCompetidores").value)) {
-    return false;
-  }
-  if (!parseInt(document.getElementById("valorInscricao").value)) {
-    return false;
-  }
-  return true;
+  return (
+    parseInt(document.getElementById("quantidadeCompetidores").value) &&
+    parseInt(document.getElementById("valorInscricao").value)
+  );
 }
 
 function adicionaHeader(h1, h2, h3) {
@@ -131,7 +124,7 @@ function calcularTaxa() {
 }
 
 function htmlAluguel(opcaoAluguel) {
-  if (opcaoAluguel.checked == true) {
+  if (opcaoAluguel.checked) {
     document.getElementById("associacoesEquipamentos").innerHTML = `
         <label>
           <input type="radio" name="choice-radio" checked="true" id="abracm">
@@ -152,7 +145,7 @@ function htmlAluguel(opcaoAluguel) {
         </label>
           `;
   }
-  if (opcaoAluguel.checked == false) {
+  if (!opcaoAluguel.checked) {
     document.getElementById("associacoesEquipamentos").innerHTML = ``;
   }
 }
